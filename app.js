@@ -6,9 +6,9 @@
     .module('app', ['auth0.lock', 'angular-jwt', 'ui.router'])
     .config(config);
 
-  config.$inject = ['$stateProvider', 'lockProvider', '$urlRouterProvider', 'jwtOptionsProvider'];
+  config.$inject = ['$stateProvider', 'lockProvider', '$urlRouterProvider', '$httpProvider', 'jwtOptionsProvider'];
 
-  function config($stateProvider, lockProvider, $urlRouterProvider, jwtOptionsProvider) {
+  function config($stateProvider, lockProvider, $urlRouterProvider, $httpProvider, jwtOptionsProvider) {
 
     $stateProvider
       .state('home', {
@@ -35,8 +35,14 @@
     jwtOptionsProvider.config({
       tokenGetter: function () {
         return localStorage.getItem('id_token');
-      }
+      },
+      whiteListedDomains: ['localhost', '127.0.0.1'],
+      unauthenticatedRedirectPath: '/login'
     });
+
+    // Add the jwtInterceptor to the array of HTTP interceptors
+    // so that JWTs are attached as Authorization headers
+    $httpProvider.interceptors.push('jwtInterceptor');
   }
 
 })();
