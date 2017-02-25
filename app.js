@@ -22,6 +22,11 @@
         controller: 'LoginController',
         templateUrl: 'components/login/login.html',
         controllerAs: 'vm'
+      }).state('transactions', {
+        url: '/transactions',
+        controller: 'TransactionsController',
+        templateUrl: 'components/transactions/transactions.html',
+        controllerAs: 'vm'
       });
 
     lockProvider.init({

@@ -24,7 +24,7 @@
     }
 
     vm.getSecured = function () {
-      $http.get(apiBaseUrl + 'secure')
+      $http.get(apiBaseUrl + 'api/secure')
         .then(function (result) {
           vm.message = result.data;
         }, function (error) {
