@@ -25,8 +25,8 @@
       });
 
     lockProvider.init({
-      clientID: 'juSb0mUIFtFQIrs5nVslyGeucnvOJknC',
-      domain: 'perfintech.auth0.com'
+      clientID: AUTH0_CLIENT_ID,
+      domain: AUTH0_DOMAIN
     });
 
     $urlRouterProvider.otherwise('/home');

@@ -38,5 +38,4 @@ bower_components
 .node_repl_history
 
 .DS_Store
-auth0-variables.js
 .vscode
