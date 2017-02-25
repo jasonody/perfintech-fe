@@ -36,7 +36,7 @@
       tokenGetter: function () {
         return localStorage.getItem('id_token');
       },
-      whiteListedDomains: ['localhost', '127.0.0.1'],
+      whiteListedDomains: ['localhost', '127.0.0.1', 'perfintechapi.azurewebsites.net'],
       unauthenticatedRedirectPath: '/login'
     });
 

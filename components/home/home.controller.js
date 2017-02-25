@@ -9,7 +9,8 @@
   HomeController.$inject = ['$http', 'authService'];
 
   function HomeController($http, authService) {
-    var apiBaseUrl = 'http://localhost:8081/';
+    //var apiBaseUrl = 'http://localhost:1337/';
+    var apiBaseUrl = 'http://perfintechapi.azurewebsites.net/';
     var vm = this;
     vm.authService = authService;
 
